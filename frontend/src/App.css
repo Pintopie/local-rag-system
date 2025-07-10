@@ -1,0 +1,190 @@
+/* Base styles for the app container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Theme-dependent styles using CSS variables */
+.light-theme {
+  --primary-main: #1976d2;
+  --secondary-main: #dc004e;
+  --background-default: #e0f2f7;
+  --background-paper: #ffffff;
+  --text-color: black;
+  --input-bg: #f0f2f5;
+  --chat-bubble-assistant-bg: rgba(240, 242, 245, 0.7);
+  --border-color: #e0e0e0;
+}
+
+.dark-theme {
+  --primary-main: #90caf9;
+  --secondary-main: #f48fb1;
+  --background-default: #121212;
+  --background-paper: #1e1e1e;
+  --text-color: white;
+  --input-bg: #333333;
+  --chat-bubble-assistant-bg: rgba(51, 51, 51, 0.7);
+  --border-color: #333333;
+}
+
+/* Apply theme variables */
+.app-container {
+  background-color: var(--background-default);
+  color: var(--text-color);
+}
+
+/* AppBar styles */
+.app-bar {
+  box-shadow: none;
+  background-color: var(--primary-main);
+}
+
+.app-bar-toolbar {
+  justify-content: space-between;
+}
+
+.app-bar-title {
+  font-weight: bold;
+}
+
+.app-bar-model-info {
+  margin-right: 16px;
+  color: white;
+}
+
+.app-bar-button {
+  border-radius: 20px;
+  text-transform: none;
+  background-color: var(--secondary-main);
+}
+
+.app-bar-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Chat History Container */
+.chat-history-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.chat-history-paper {
+  padding: 16px;
+  margin-bottom: 16px;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-paper);
+  border-radius: 15px;
+}
+
+.chat-list {
+  flex-grow: 1;
+}
+
+.chat-list-item {
+  margin-bottom: 8px;
+}
+
+.chat-bubble {
+  padding: 12px;
+  max-width: 70%;
+  border-radius: 15px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.chat-bubble-user {
+  /* These styles will be handled inline in App.js */
+}
+
+.chat-bubble-assistant {
+  /* These styles will be handled inline in App.js */
+}
+
+.chat-bubble-header {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* Message Input */
+.message-input-app-bar {
+  top: auto;
+  bottom: 0;
+  background-color: var(--background-paper);
+  border-top: 1px solid var(--border-color);
+}
+
+.message-input-toolbar {
+  padding: 12px;
+}
+
+.message-text-field .MuiOutlinedInput-root {
+  border-radius: 20px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.message-text-field .MuiOutlinedInput-root fieldset {
+  border-color: transparent;
+}
+
+.message-text-field .MuiOutlinedInput-root:hover fieldset {
+  border-color: transparent;
+}
+
+.message-text-field .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: transparent;
+}
+
+.send-button {
+  height: 56px;
+  border-radius: 20px;
+  text-transform: none;
+  background-color: var(--primary-main);
+}
+
+.send-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Modal Styles */
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: var(--background-paper);
+  border: 2px solid var(--border-color);
+  box-shadow: 24px;
+  padding: 32px;
+  border-radius: 15px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-list-item-text {
+  color: var(--text-color);
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
