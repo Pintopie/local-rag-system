@@ -6,8 +6,7 @@ services:
     container_name: chatbot-backend-container
     ports:
       - "8000:8000"
-    environment:
-      - OLLAMA_MODEL=${OLLAMA_MODEL:-deepseek-r1:7b}
+    
     volumes:
       - ./backend:/app
     restart: unless-stopped

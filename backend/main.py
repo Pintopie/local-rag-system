@@ -34,9 +34,7 @@ async def chat(message: Message, request: Request):
     logger.info(f"Received request from {request.client.host}")
     logger.info(f"User message: {message.message}")
 
-    ollama_model = message.model_name or os.getenv("OLLAMA_MODEL")
-    if not ollama_model:
-        ollama_model = "deepseek-r1:7b"
+    ollama_model = message.model_name or "deepseek-r1:7b"
     logger.info(f"Using Ollama model: {ollama_model}")
 
     try:
