@@ -102,4 +102,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 9. License
 
-This project is licensed under the MIT License - see the LICENSE file for details. (Note: A `LICENSE` file is not included in the provided context. You may want to create one.)
+This project is licensed under the MIT License - see the LICENSE file for details.
